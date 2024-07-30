@@ -79,7 +79,7 @@ def modificar():
             nuevo_correo = input("Ingresa el nuevo correo: ").upper()
             Informacion[ID]['Correo'] = nuevo_correo
         elif opcion == 4:
-            nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
+            nuevo_nombre = input("Ingresa el nuevo nombre: ").upper().strip()
             nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
             nuevo_correo = input("Ingresa el nuevo correo: ").upper()
             Informacion[ID]['Nombre'] = nuevo_nombre

@@ -1,0 +1,67 @@
+### Python ###
+# Archivos compilados / optimizados
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Extensiones C
+*.so
+
+# Distribución / empaquetado
+.Python
+build/
+dist/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Archivos temporales
+*.log
+*.tmp
+
+# Informes de pruebas / cobertura
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Entornos
+.env
+.venv/
+env/
+ENV/
+venv/
+
+# Configuraciones del entorno de desarrollo
+.vscode/
+.idea/
+
+# Documentación generada
+docs/_build/
+
+# Notebooks
+.ipynb_checkpoints/
+
+# Archivos generados por PyInstaller
+*.spec
+*.manifest
+
+# Poetry
+poetry.lock
+poetry.toml
+
+# Archivos generados por herramientas de construcción
+*.manifest
+
+# Otros
+*.sage.py

@@ -28,7 +28,7 @@ def guardar_csv():
     try:
         with open(Ruta_csv, "w", newline='', encoding='utf-8') as file:
             writer = csv.writer(file)
-            writer.writerow(["ID", "Nombre", "Apellido", "Correo", "Cel"])  # Cabecera del CSV
+            writer.writerow(["ID", "Nombre", "Apellido", "Correo", "Cel"]) 
             for id, datos in Informacion.items():
                 writer.writerow([id, datos["Nombre"], datos["Apellido"], datos["Correo"], datos["Cel"]])
     except Exception as e:
@@ -61,9 +61,7 @@ Ruta_errores = "Data_Base/errores.txt"
 def registrar_error(mensaje_error):
     try:
         with open(Ruta_errores, "a", encoding='utf-8') as file:
-            # Obtiene la fecha y hora actual
             fecha_hora = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            # Escribe el mensaje de error con la fecha y hora
             file.write(f"{fecha_hora} - ERROR: {mensaje_error}\n")
     except Exception as e:
         print(f"Error al registrar el error en el archivo: {e}")
