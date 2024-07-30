@@ -44,11 +44,49 @@ def buscar_id():
         print("*" * 60)
         print("El usuario con la cédula ingresada no existe. \nPor favor, intente de nuevo")
         print("*" * 60)
-        return
+        return None
     else:
         print(f"{'ID':<10} {'Nombre':<15} {'Apellido':<15} {'Correo':<20}")
         print("-" * 60)
         usuario = Informacion[ID]
         print(f"{ID:<10} {usuario['Nombre']:<15} {usuario['Apellido']:<15} {usuario['Correo']:<20}")
         print("-" * 60)
+        return ID
+
+def modificar():
+    cargar_datos()
+    print("************************************************************")
+    print("                   MODIFICAR DATOS")
+    print("************************************************************\n")
+
+    ID = buscar_id()
+
+    print("¿Qué valor desea modificar?")
+    print("1. Nombre")
+    print("2. Apellido")
+    print("3. Correo")
+    print("4. Modificar todos")
+    opcion = int(input("Ingresa el número de la opción: "))
+    if opcion == 1:
+        nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
+        Informacion[ID]['Nombre'] = nuevo_nombre
+    elif opcion == 2:
+        nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
+        Informacion[ID]['Apellido'] = nuevo_apellido
+    elif opcion == 3:
+        nuevo_correo = input("Ingresa el nuevo correo: ").upper()
+        Informacion[ID]['Correo'] = nuevo_correo
+    elif opcion == 4:
+        nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
+        nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
+        nuevo_correo = input("Ingresa el nuevo correo: ").upper()
+        Informacion[ID]['Nombre'] = nuevo_nombre
+        Informacion[ID]['Apellido'] = nuevo_apellido
+        Informacion[ID]['Correo'] = nuevo_correo
+    else:
+        print("Opción no válida")
+    guardar_datos()
+    print("*" * 60)
+    print("** Los datos han sido actualizados correctamente. **")
+    print("*" * 60)
 
