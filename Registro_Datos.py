@@ -19,6 +19,7 @@ def Registro():
     else:
         print("La cédula ya existe.")
     guardar_datos()
+    guardar_csv()
 
 def reporte():
     cargar_datos()
@@ -66,27 +67,31 @@ def modificar():
     print("2. Apellido")
     print("3. Correo")
     print("4. Modificar todos")
-    opcion = int(input("Ingresa el número de la opción: "))
-    if opcion == 1:
-        nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
-        Informacion[ID]['Nombre'] = nuevo_nombre
-    elif opcion == 2:
-        nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
-        Informacion[ID]['Apellido'] = nuevo_apellido
-    elif opcion == 3:
-        nuevo_correo = input("Ingresa el nuevo correo: ").upper()
-        Informacion[ID]['Correo'] = nuevo_correo
-    elif opcion == 4:
-        nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
-        nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
-        nuevo_correo = input("Ingresa el nuevo correo: ").upper()
-        Informacion[ID]['Nombre'] = nuevo_nombre
-        Informacion[ID]['Apellido'] = nuevo_apellido
-        Informacion[ID]['Correo'] = nuevo_correo
-    else:
-        print("Opción no válida")
+    try:
+        opcion = int(input("Ingresa el número de la opción: "))
+        if opcion == 1:
+            nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
+            Informacion[ID]['Nombre'] = nuevo_nombre
+        elif opcion == 2:
+            nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
+            Informacion[ID]['Apellido'] = nuevo_apellido
+        elif opcion == 3:
+            nuevo_correo = input("Ingresa el nuevo correo: ").upper()
+            Informacion[ID]['Correo'] = nuevo_correo
+        elif opcion == 4:
+            nuevo_nombre = input("Ingresa el nuevo nombre: ").upper()
+            nuevo_apellido = input("Ingresa el nuevo apellido: ").upper()
+            nuevo_correo = input("Ingresa el nuevo correo: ").upper()
+            Informacion[ID]['Nombre'] = nuevo_nombre
+            Informacion[ID]['Apellido'] = nuevo_apellido
+            Informacion[ID]['Correo'] = nuevo_correo
+        else:
+            print("Opción no válida")
+    except Exception as e:
+        registrar_error(e)
     guardar_datos()
     print("*" * 60)
     print("** Los datos han sido actualizados correctamente. **")
     print("*" * 60)
 
+modificar()
